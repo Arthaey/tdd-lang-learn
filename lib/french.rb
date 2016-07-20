@@ -1,7 +1,11 @@
 class French
 
   def self.negate_verb(verb)
-    "ne #{verb} pas"
+    if verb =~ /^[aàeèéiouù]/
+      "n'#{verb} pas"
+    else
+      "ne #{verb} pas"
+    end
   end
 
 end
