@@ -11,7 +11,7 @@ class French
     end
   end
 
-  def self.simple_question(statement)
+  def self.question_is_it_that(statement)
     statement = uncapitalize(statement)
     statement = chomp_punctuation(statement)
     "Est-ce que #{statement} ?"
