@@ -1,4 +1,7 @@
+require 'helpers'
+
 class French
+  extend Helpers
 
   def self.negate_verb(verb)
     if verb =~ /^[aàeèéiouù]/
@@ -6,6 +9,12 @@ class French
     else
       "ne #{verb} pas"
     end
+  end
+
+  def self.simple_question(statement)
+    statement = uncapitalize(statement)
+    statement = chomp_punctuation(statement)
+    "Est-ce que #{statement} ?"
   end
 
 end

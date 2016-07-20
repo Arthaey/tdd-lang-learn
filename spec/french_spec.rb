@@ -10,4 +10,12 @@ RSpec.describe French do
     end
   end
 
+  context "when forming simple questions" do
+    it "should prefix <est-ce que> to a statement" do
+      statement = "Vous parlez anglais."
+      question = "Est-ce que vous parlez anglais ?"
+      expect(French.simple_question(statement)).to eq(question)
+    end
+  end
+
 end
