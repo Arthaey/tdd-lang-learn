@@ -17,4 +17,11 @@ class French
     "Est-ce que #{statement} ?"
   end
 
+  def self.inverted_question(statement)
+    statement = uncapitalize(statement)
+    statement = chomp_punctuation(statement)
+    # TODO: implement
+    statement.capitalize
+  end
+
 end

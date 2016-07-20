@@ -16,6 +16,12 @@ RSpec.describe French do
       question = "Est-ce que vous parlez anglais ?"
       expect(French.question_is_it_that(statement)).to eq(question)
     end
+
+    it "should join 2nd- or 3rd-person pronouns to the inverted verb" do
+      statement = "Vous parlez anglais."
+      question = "Parlez-vous anglais ?"
+      expect(French.inverted_question(statement)).to eq(question)
+    end
   end
 
 end
