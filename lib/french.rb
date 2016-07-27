@@ -1,7 +1,4 @@
-require 'helpers'
-
 class French
-  extend Helpers
 
   def self.negate_verb(verb)
     if verb =~ /^[aàeèéiouù]/
@@ -12,16 +9,15 @@ class French
   end
 
   def self.question_is_it_that(statement)
-    statement = uncapitalize(statement)
-    statement = chomp_punctuation(statement)
-    "Est-ce que #{statement} ?"
+    sentence = Sentence.new(statement)
+    "Est-ce que #{sentence.deformatted} ?"
   end
 
   def self.inverted_question(statement)
-    statement = uncapitalize(statement)
-    statement = chomp_punctuation(statement)
+    sentence = Sentence.new(statement)
+
     # TODO: implement
-    statement.capitalize
+    sentence.deformatted.capitalize
   end
 
 end
