@@ -14,7 +14,8 @@ class French
   end
 
   def self.inverted_question(sentence)
-    sentence.deformatted.swap(:verb, :pronoun).capitalize
+    question = sentence.deformatted.swap(:verb, :pronoun)
+    "#{question.capitalize} ?"
   end
 
 end
