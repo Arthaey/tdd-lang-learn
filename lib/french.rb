@@ -13,11 +13,8 @@ class French
     "Est-ce que #{sentence.deformatted} ?"
   end
 
-  def self.inverted_question(statement)
-    sentence = Sentence.new(statement)
-
-    # TODO: implement
-    sentence.deformatted.capitalize
+  def self.inverted_question(sentence)
+    sentence.deformatted.swap(:verb, :pronoun).capitalize
   end
 
 end

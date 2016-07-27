@@ -18,7 +18,7 @@ RSpec.describe French do
     end
 
     it "should join 2nd- or 3rd-person pronouns to the inverted verb" do
-      statement = "Vous parlez anglais."
+      statement = Sentence.new("Vous parlez anglais.", {pronoun: "vous", verb: "parlez"})
       question = "Parlez-vous anglais ?"
       expect(French.inverted_question(statement)).to eq(question)
     end
